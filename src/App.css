@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.full-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*layout*/
+.wrapper {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 4rem
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+    background: rgb(238, 243, 246);
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.main-container .dashboard-inner-container {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard-inner-container,
+.tab-container {
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*tab container*/
+.tab-container {
+    background: white;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.tab-container {
+    padding-bottom: 4rem !important;
+}
+
+.tab-container .navbar-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0;
+    color: #413d3d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2.5rem;
+}
+
+.tab-container .navbar-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    opacity: 0.4;
+}
+
+.tab-container .tabs {
+    list-style: none;
+    bottom: 0;
+    min-width: 40rem;
+    margin-bottom: 0;
+    position: absolute;
+    padding-left: 0;
+}
+
+.tab-container .tabs li {
+    float: left;
+    width: 8rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-right: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    color: #c5c5c5;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tab-container .tabs li:hover {
+    color: #959595;
+}
+
+/*underline*/
+.tab-container .tabs li.tab-underline {
+    position: absolute;
+    height: 0.1875rem;
+    background: #0e8ad6;
+    width: 3rem;
+    bottom: 0;
+    transition: all 0.33s cubic-bezier(0.4, 0.8, 0.4, 1);
+}
+
+.tab-container .tabs li.active {
+    color: #5a5a5a;
+}
+
+.tab-container .tabs li:nth-of-type(1).active~.tab-underline {
+    transform: translateX(2.5rem);
+}
+
+.tab-container .tabs li:nth-of-type(2).active~.tab-underline {
+    transform: translateX(11.5rem);
+}
+
+.tab-container .tabs li:nth-of-type(3).active~.tab-underline {
+    transform: translateX(20.5rem);
 }
