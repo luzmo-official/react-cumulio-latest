@@ -6463,6 +6463,11 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
+lodash@^4.17.20:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+
 loglevel@^1.6.6:
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.7.tgz#b3e034233188c68b889f5b862415306f565e2c56"
@@ -8539,13 +8544,14 @@ react-bootstrap@^1.0.0-beta.17:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-cumulio@^0.1.0-beta.1:
-  version "0.1.0-beta.2"
-  resolved "https://registry.yarnpkg.com/react-cumulio/-/react-cumulio-0.1.0-beta.2.tgz#e6f5661f2aecf8cd17adb8f999d1329626e0578d"
-  integrity sha512-SUkmRu/aHEQn80N9ggliV+7bOv85D89vpxwPwDHVA8oY7FTHfShW+yHa423TaFyXpQJ0bs1+jt2J7j4OtIAzTw==
+react-cumulio@^0.1.0-beta.14:
+  version "0.1.0-beta.14"
+  resolved "https://registry.yarnpkg.com/react-cumulio/-/react-cumulio-0.1.0-beta.14.tgz#c62452bb7e1c2ce8de65e6cdeb018799b44891c3"
+  integrity sha512-lJq9a/tRz0qniufPQSOX4oq2UZe6UBYtNZCjgNuMzJnAX7y9yE9e8pWP4p7WsBc/U2456qPUG3a9itEkuqQDRw==
   dependencies:
     "@react-hook/window-size" "^1.0.12"
     "@use-it/event-listener" "^0.1.3"
+    lodash "^4.17.20"
     prop-types "^15.7.2"
     ramda "^0.27.0"
     uuid "^3.4.0"
