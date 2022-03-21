@@ -1,17 +1,10 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
-import {
-  CumulioContext,
-  initialState,
-  reducer,
-  CumulioComponent,
-  refreshDataAction
-} from "react-cumulio";
+import { CumulioDashboardComponent } from '@cumul.io/react-cumulio-dashboard';
 
 const App = () => {
   const [activeDashboard, setActiveDashboard] = useState(0);
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+  const dashboardRef = useRef();
   const dashboards = [
     {
       name: 'Facebook',
@@ -28,7 +21,7 @@ const App = () => {
   ];
 
   const refreshData = () => {
-    dispatch(refreshDataAction());
+    dashboardRef.current.reloadDashboard();
   };
 
   return (
@@ -52,15 +45,14 @@ const App = () => {
           </button>
           <div className="dashboard-outer-container">
             <div className="dashboard-inner-container">
-              <CumulioContext.Provider value={{ state, dispatch }}>
-                <CumulioComponent
-                  dashboardId={dashboards[activeDashboard].dashboardId}
-                  loaderBackground="rgb(238, 243, 246)"
-                  loaderFontColor="rgb(0, 45, 112)"
-                  loaderSpinnerColor="rgb(0, 54, 136)"
-                  loaderSpinnerBackground="rgb(194, 209, 233)"
-                />
-              </CumulioContext.Provider>
+              <CumulioDashboardComponent
+                ref={dashboardRef}
+                dashboardId={dashboards[activeDashboard].dashboardId}
+                loaderBackground="rgb(238, 243, 246)"
+                loaderFontColor="rgb(0, 45, 112)"
+                loaderSpinnerColor="rgb(0, 54, 136)"
+                loaderSpinnerBackground="rgb(194, 209, 233)"
+              />
             </div>
           </div>
         </div>
